@@ -46,8 +46,8 @@ func translateQuery2(token string, queryText string, sourceLang string, targetLa
 
 	var outputStatus int
 	var outputBody string
-	outputStatus, outputBody, err = runRequest(RequestInput{
-		URLStr:   "https://translation.googleapis.com/language/translate/v2",
+	outputStatus, outputBody, err = runRequest(requestInput{
+		URL:      "https://translation.googleapis.com/language/translate/v2",
 		Method:   "POST",
 		SendData: true,
 		Data:     jsonData,

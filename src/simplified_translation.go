@@ -38,16 +38,16 @@ var translations = map[string]map[string]string{
 		"ar": "'ana",
 		"ru": "ya",
 	},
-	"this": map[string]string{
-		"en": "T͟His",
+	"be": map[string]string{
+		"en": "bē",
 		"fr": "être",
 		"es": "sí",
 		"zh": "shì",
 		"da": "ja",
 		"id": "iya",
 		"ja": "arimasu",
-		"ar": "hadha",
-		"ru": "eto",
+		"ar": "yakun",
+		"ru": "byt'",
 	},
 	"eat": map[string]string{
 		"en": "ēt",
@@ -60,16 +60,16 @@ var translations = map[string]map[string]string{
 		"ar": "takul",
 		"ru": "yest'",
 	},
-	"be": map[string]string{
-		"en": "bē",
+	"this": map[string]string{
+		"en": "T͟His",
 		"fr": "cette", //ce
 		"es": "esta",  //esto
 		"zh": "zhè",
 		"da": "det her",
 		"id": "ini",
 		"ja": "kono",
-		"ar": "yakun",
-		"ru": "",
+		"ar": "hadha",
+		"ru": "eto",
 	},
 	"past": map[string]string{
 		"en": "past",
@@ -155,6 +155,8 @@ var translations = map[string]map[string]string{
 // TODO return international phonetic alphabet as output
 // instead of trying to eliminate IPA characters.
 // https://en.wikipedia.org/wiki/International_Phonetic_Alphabet
+
+// Maybe try to find translation lists e.g. https://github.com/jmbeach/duolingo-vocab-lists/
 
 var mTranslateChars = map[string]string{
 	"ä": "o",

@@ -8,8 +8,8 @@ import (
 
 //------------------------------------------------------------------------------
 
-type RequestInput struct {
-	URLStr            string // (compulsory)
+type requestInput struct {
+	URL               string // (compulsory)
 	Method            string // (compulsory) HTTP method, e.g. GET
 	SendData          bool   // (optional, default false)
 	ContentType       string // (needed only if SendData==true) Content-Type of body
@@ -19,26 +19,13 @@ type RequestInput struct {
 
 //------------------------------------------------------------------------------
 
-func runRequest(input RequestInput) (outputStatus int, outputBody string, err error) {
-
-	// if true {
-	// 	outputBody = `{
-	// "data": {
-	// "translations": [
-	// {
-	// "translatedText": "La Gran Pirámide de Giza (también conocida como la Pirámide de Khufu o la Pirámide de Keops) es la más antigua y más grande de las tres pirámides en el complejo de la pirámide de Giza."
-	// }
-	// ]
-	// }
-	// }`
-	// 	return
-	// }
+func runRequest(input requestInput) (outputStatus int, outputBody string, err error) {
 
 	var client = &http.Client{Transport: &http.Transport{}}
 
 	var req *http.Request
 	if input.SendData {
-		req, err = http.NewRequest(input.Method, input.URLStr, bytes.NewBuffer(input.Data))
+		req, err = http.NewRequest(input.Method, input.URL, bytes.NewBuffer(input.Data))
 		if err != nil {
 			return
 		}
@@ -47,7 +34,7 @@ func runRequest(input RequestInput) (outputStatus int, outputBody string, err er
 		}
 	} else {
 		var body = bytes.NewReader([]byte{})
-		req, err = http.NewRequest(input.Method, input.URLStr, body)
+		req, err = http.NewRequest(input.Method, input.URL, body)
 		if err != nil {
 			return
 		}

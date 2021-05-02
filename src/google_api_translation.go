@@ -12,6 +12,8 @@ import (
 
 // TODO : alternatively: https://github.com/googleapis/google-api-go-client/blob/master/translate/v2/translate-gen.go
 
+// https://github.com/vitalets/google-translate-token WTF wait what
+
 //------------------------------------------------------------------------------
 
 func translateQuery(queryText string, sourceLang string, targetLang string) string {

@@ -11,7 +11,7 @@ const constDebug = true
 
 //------------------------------------------------------------------------------
 
-func translateEnglishWordToUniversalang(word string) string {
+func translateEnglishWordToUniversalang(word string, debugVerbose bool) string {
 
 	var languages = []string{"en", "fr", "es", "zh", "da", "id", "ja", "ar"}
 
@@ -25,7 +25,7 @@ func translateEnglishWordToUniversalang(word string) string {
 	}
 	//trByLanguage["en"] = word
 
-	if constDebug {
+	if debugVerbose {
 		fmt.Printf("\n")
 		for language, wordTr := range trByLanguage {
 			fmt.Printf("%s %s\n", language, wordTr)
@@ -35,11 +35,11 @@ func translateEnglishWordToUniversalang(word string) string {
 	var a = &aggregator{}
 	a.prepare(trByLanguage)
 	a.aggregate(trByLanguage)
-	if constDebug {
+	if debugVerbose {
 		a.displayMap()
 	}
 
-	return a.finalize()
+	return a.finalize(debugVerbose)
 }
 
 //------------------------------------------------------------------------------
@@ -77,13 +77,20 @@ func (a *aggregator) setSound(i int, sound string) {
 
 //------------------------------------------------------------------------------
 
+// finds the number of occurence of each sound at each index.
 func (a *aggregator) aggregate(trByLanguage map[string]string) {
+
 	for _, wordTr := range trByLanguage {
 		var i = 0
 		var sound string
 		var c rune
 		var isVowelCurrent = false
 		var firstRune = true
+
+		// TODO: if a word translate by "badaboom" in a language and "boom" in another,
+		// it will not find any similarity and will not select "boom" as a common root
+		// because similarities are currently found at the same indexes.
+
 		for _, c = range wordTr {
 			var isVo = isVowel(c)
 			// TODO add semivowels
@@ -132,7 +139,7 @@ func (a *aggregator) displayMap() {
 
 //------------------------------------------------------------------------------
 
-func (a *aggregator) finalize() string {
+func (a *aggregator) finalize(debugVerbose bool) string {
 
 	//---
 	// algorithm to select best sounds
@@ -204,7 +211,7 @@ func (a *aggregator) finalize() string {
 		panic("only spaces?")
 	}
 
-	if constDebug {
+	if debugVerbose {
 		fmt.Printf("===> %d %d %s %s\n", firstBl, lastNotBl, strings.Join(outputBest, "."), strings.Join(outputNoBl, "."))
 	}
 	return strings.Join(outputBest[0:firstBl], "") + strings.Join(outputNoBl[firstBl:lastNotBl], "")
