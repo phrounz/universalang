@@ -1,4 +1,4 @@
-package main
+package translator_anylang
 
 import (
 	"context"
@@ -16,7 +16,7 @@ import (
 
 //------------------------------------------------------------------------------
 
-func translateQuery(queryText string, sourceLang string, targetLang string) string {
+func translateQueryGoogle(queryText string, sourceLang string, targetLang string) string {
 
 	lang, err := language.Parse(targetLang)
 	if err != nil {

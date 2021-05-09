@@ -1,13 +1,10 @@
-package main
+package translator_anylang_simplified
 
 //------------------------------------------------------------------------------
 
-// TODO return international phonetic alphabet as output
-// instead of trying to eliminate IPA characters.
 // https://en.wikipedia.org/wiki/International_Phonetic_Alphabet
-
-// Maybe try to find translation lists e.g. https://github.com/jmbeach/duolingo-vocab-lists/
-
+//
+// This map translates IPA into a readable english alphabet.
 var mTranslateCharsFinal = map[string]string{
 	//
 	// "f":  "f",
@@ -48,6 +45,8 @@ var mTranslateCharsFinal = map[string]string{
 	"h̩": "h", //?
 	"ō":  "o",
 }
+
+//------------------------------------------------------------------------------
 
 var mTranslateCharsByLanguage = map[string]map[string]string{
 	// https://en.wikipedia.org/wiki/Help:IPA/Mandarin
@@ -139,5 +138,7 @@ var mTranslateCharsByLanguage = map[string]map[string]string{
 	},
 	// TODO other languages
 }
+
+// TODO return international phonetic alphabet as output instead of trying to eliminate IPA characters?
 
 //------------------------------------------------------------------------------

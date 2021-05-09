@@ -13,20 +13,20 @@ Use -v for verbose mode.
 Example of current translations (english: universalang):
 ```
 i: we
-hello: hola
-this: ke
-be: ji
-future: futar
+hello: holo
+this: ee
+be: bi
+future: mutar
 past: pas
 eat: take
-soccer: sutba
+soccer: futba
 language: langa
-speak: habla
+speak: harlar
 do: fur
 tea: te
-yes: yei
+yes: ouia
 no: no
-love: aiea
+love: aieu
 ```
 
 Because of the way the algorithm currently works, each execution may return different values.

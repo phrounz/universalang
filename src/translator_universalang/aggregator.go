@@ -1,43 +1,9 @@
-package main
+package translator_universalang
 
 import (
 	"fmt"
 	"strings"
 )
-
-//------------------------------------------------------------------------------
-
-const constDebug = true
-
-//------------------------------------------------------------------------------
-
-func translateEnglishWordToUniversalang(word string, debugVerbose bool) string {
-
-	var languages = []string{"en", "fr", "es", "zh", "da", "id", "ja", "ar"}
-
-	if debugVerbose {
-		fmt.Printf("\n")
-	}
-
-	var trByLanguage = make(map[string]string)
-	for _, language := range languages {
-		var resultSimplified = translateWordSimplified(word, "en", language, debugVerbose)
-		// if isVowel([]rune(result)[0]) {
-		// 	result = " " + result // add a space to keep consonants/vowels alignment TODO discuss
-		// }
-		trByLanguage[language] = resultSimplified
-	}
-	//trByLanguage["en"] = word
-
-	var a = &aggregator{}
-	a.prepare(trByLanguage)
-	a.aggregate(trByLanguage)
-	if debugVerbose {
-		a.displayMap()
-	}
-
-	return a.finalize(debugVerbose)
-}
 
 //------------------------------------------------------------------------------
 

@@ -1,10 +1,8 @@
-package main
+package translator_anylang
 
 //------------------------------------------------------------------------------
 
-const constUseExamples = true
-
-//------------------------------------------------------------------------------
+// Maybe try to find translation lists e.g. https://github.com/jmbeach/duolingo-vocab-lists/ ?
 
 var exampleTranslations = map[string]map[string]string{
 	"hello": map[string]string{
@@ -104,7 +102,7 @@ var exampleTranslations = map[string]map[string]string{
 		"id": "bahasa",
 		"ja": "gengo",
 		"ar": "lugha",
-		"ru": "",
+		"ru": "yazyk",
 	},
 	"speak": map[string]string{
 		"en": "spēk",
