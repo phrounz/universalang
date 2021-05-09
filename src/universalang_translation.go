@@ -15,22 +15,19 @@ func translateEnglishWordToUniversalang(word string, debugVerbose bool) string {
 
 	var languages = []string{"en", "fr", "es", "zh", "da", "id", "ja", "ar"}
 
+	if debugVerbose {
+		fmt.Printf("\n")
+	}
+
 	var trByLanguage = make(map[string]string)
 	for _, language := range languages {
-		var result = translateWordSimplified(word, "en", language)
+		var resultSimplified = translateWordSimplified(word, "en", language, debugVerbose)
 		// if isVowel([]rune(result)[0]) {
 		// 	result = " " + result // add a space to keep consonants/vowels alignment TODO discuss
 		// }
-		trByLanguage[language] = result
+		trByLanguage[language] = resultSimplified
 	}
 	//trByLanguage["en"] = word
-
-	if debugVerbose {
-		fmt.Printf("\n")
-		for language, wordTr := range trByLanguage {
-			fmt.Printf("%s %s\n", language, wordTr)
-		}
-	}
 
 	var a = &aggregator{}
 	a.prepare(trByLanguage)

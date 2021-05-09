@@ -19,7 +19,10 @@ func main() {
 		}
 	}
 
-	var words = []string{"i", "hello", "this", "be", "future", "past", "eat", "soccer", "language", "speak", "do", "tea"}
+	var words = []string{
+		"i", "hello", "this", "be", "future", "past", "eat", "soccer",
+		"language", "speak", "do", "tea", "yes", "no", "love"}
+
 	for _, word := range words {
 		var translation = translateEnglishWordToUniversalang(word, debugVerbose)
 		fmt.Printf("%s: %s\n", word, translation)

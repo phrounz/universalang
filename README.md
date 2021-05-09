@@ -8,21 +8,25 @@ To run:
 ```
 go build -o universalang ./src && ./universalang
 ```
+Use -v for verbose mode.
 
 Example of current translations (english: universalang):
 ```
 i: we
 hello: hola
 this: ke
-be: shi
+be: ji
 future: futar
-past: pasa
+past: pas
 eat: take
-soccer: futba
+soccer: sutba
 language: langa
-speak: tarbe
+speak: habla
 do: fur
 tea: te
+yes: yei
+no: no
+love: aiea
 ```
 
 Because of the way the algorithm currently works, each execution may return different values.
