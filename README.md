@@ -2,7 +2,7 @@
 
 A silly attempt to do an universal language, which would use for each word, an "average" of the letters/sounds of the same word in many languages around the world.
 
-Early development.
+I'm not a linguist, so it's probably full of approximations, and it's still in early development.
 
 To run:
 ```
@@ -12,8 +12,9 @@ Use -v for verbose mode.
 
 Example of current translations (english: universalang):
 ```
-i: we
 hello: holo
+i: we
+you: ti
 this: ee
 be: bi
 future: mutar

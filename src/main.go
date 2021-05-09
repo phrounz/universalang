@@ -24,7 +24,7 @@ func main() {
 
 	// see translator_anylang/examples.go
 	var words = []string{
-		"i", "hello", "this", "be", "future", "past", "eat", "soccer",
+		"hello", "i", "you", "this", "be", "future", "past", "eat", "soccer",
 		"language", "speak", "do", "tea", "yes", "no", "love"}
 
 	for _, word := range words {

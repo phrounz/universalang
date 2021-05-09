@@ -27,6 +27,17 @@ var exampleTranslations = map[string]map[string]string{
 		"ar": "'ana",
 		"ru": "ya",
 	},
+	"you": map[string]string{
+		"en": "yo͞o",
+		"fr": "toi",
+		"es": "tú", //te, usted
+		"zh": "nǐ",
+		"da": "du",
+		"id": "kamu",
+		"ja": "kimi", //kimi (wa) //anata (wa)
+		"ar": "'ant",
+		"ru": "ty",
+	},
 	"be": map[string]string{
 		"en": "bē",
 		"fr": "être",
