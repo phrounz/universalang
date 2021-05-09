@@ -18,7 +18,7 @@ func TranslateEnglishWordToUniversalang(word string, debugVerbose bool) string {
 
 	var trByLanguage = make(map[string]string)
 	for _, language := range languages {
-		var result = translator_anylang_simplified.TranslateWordSimplified(word, "en", language, debugVerbose)
+		var result = translator_anylang_simplified.TranslateEnglishWordSimplified(word, language, debugVerbose)
 		// if isVowel([]rune(result)[0]) {
 		// 	result = " " + result // add a space to keep consonants/vowels alignment TODO discuss
 		// }

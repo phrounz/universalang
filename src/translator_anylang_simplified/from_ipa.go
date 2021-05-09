@@ -4,52 +4,11 @@ package translator_anylang_simplified
 
 // https://en.wikipedia.org/wiki/International_Phonetic_Alphabet
 //
-// This map translates IPA into a readable english alphabet.
-var mTranslateCharsFinal = map[string]string{
-	//
-	// "f":  "f",
-	// "g":  "k",
-	// "h":  "kʰ",
-	// "z":  "ts",
-	// "c":  "tsh", //tsʰ
-	// "m":  "m",
-	// "n":  "n",
-	// "b":  "p",
-	// "p":  "r",
-	// "r":  "ʐ", // ɻ i
-	// "s":  "s",
-	// "sh": "ʂ",
-
-	//---
-	"ʰ":  "",
-	" ":  "",
-	"ˈ":  "",
-	"'":  "",
-	"ʁ":  "r",
-	"ɕ":  "sh",
-	"ŋ":  "ng",
-	"ə":  "e",
-	"ä":  "o",
-	"ē":  "i",
-	"ø":  "o",
-	"œ":  "e",
-	"ɥ":  "u",
-	"ʈʂ": "tch",
-	"ʈs": "tch",
-	"ʈ":  "t",
-	"ʂ":  "sh",
-	"ɑ":  "a",
-	"ð":  "th",
-	"m̩": "m",
-	"n̩": "n",
-	"h̩": "h", //?
-	"ō":  "o",
-}
-
-//------------------------------------------------------------------------------
-
+// This map translates alphabets into IPA.
+//
+// TODO manage altenatives e.g. "ø" in danish should give "ø" or "œ", or "ɶ", depending of the word.
 var mTranslateCharsByLanguage = map[string]map[string]string{
-	// https://en.wikipedia.org/wiki/Help:IPA/Mandarin
+	// https://en.wikipedia.org/wiki/Help:IPA/Mandarin (pinyin)
 	"zh": map[string]string{
 		"x":  "ɕ",
 		"f":  "f",
@@ -138,7 +97,5 @@ var mTranslateCharsByLanguage = map[string]map[string]string{
 	},
 	// TODO other languages
 }
-
-// TODO return international phonetic alphabet as output instead of trying to eliminate IPA characters?
 
 //------------------------------------------------------------------------------

@@ -14,10 +14,10 @@ import (
 
 //------------------------------------------------------------------------------
 
-func TranslateWordSimplified(word string, sourceLang string, targetLang string, debugVerbose bool) (resultSimplified string) {
+func TranslateEnglishWordSimplified(word string, targetLang string, debugVerbose bool) (resultSimplified string) {
 
 	// translate
-	var result, isAlreadyIPA = translator_anylang.Translate(word, sourceLang, targetLang, debugVerbose)
+	var result, isAlreadyIPA = translator_anylang.Translate(word, "en", targetLang, debugVerbose)
 
 	// remove uppercase
 	var resultRaw = strings.ToLower(result)
