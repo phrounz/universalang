@@ -14,7 +14,7 @@ $ go build -o universalang ./src
 Examples:
 ```
 $./universalang "I love eating salads"
-je aibe ede salad$
+je aibii take~ sala$
 
 $ ./universalang "Hello world, i am a translation into an universal language, this is funny. Do you understand me?"
 hal muske, je ei translatio eno universal langa, ke ei fushje. do tu foeem me?
