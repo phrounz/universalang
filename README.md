@@ -4,32 +4,38 @@ A silly attempt to do an universal language, which would use for each word, an "
 
 I'm not a linguist, so it's probably full of approximations, and it's still in early development.
 
-To run:
-```
-go build -o universalang ./src && ./universalang
-```
-Use -v for verbose mode.
+### How to run
 
-Example of current translations (english: universalang):
+To build:
 ```
-hello: holo
-i: we
-you: ti
-this: ee
-be: bi
-future: mutar
-past: pas
-eat: take
-soccer: futba
-language: langa
-speak: harlar
-do: fur
-tea: te
-yes: ouia
-no: no
-love: aieu
+$ go build -o universalang ./src
 ```
 
-Because of the way the algorithm currently works, each execution may return different values.
+Examples:
+```
+$./universalang "I love eating salads"
+je aibe ede salad$
 
-You can use Google Translate by setting constUseExamples=false but it's not tested and requires a Google Translate API token.
+$ ./universalang "Hello world, i am a translation into an universal language, this is funny. Do you understand me?"
+hal muske, je ei translatio eno universal langa, ke ei fushje. do tu foeem me?
+
+$ ./universalang "The African fish eagle is a large species of eagle found throughout sub-Saharan Africa wherever large bodies of open water with an abundant food supply occur."
+afrikan pib oao ei band espe de oao faka* tartut sub-saharien africa doke grand bodi$ de oaert ma moth abunda mai kaea oiuo.
+
+$ ./universalang "St Cyprian's Church is an Anglican parish church in the Marylebone district of London. Designed by Sir Ninian Comper in a Perpendicular Gothic style, the building was constructed between 1901 and 1903."
+st cyprian ed kglrksja ei anglican paruk kerke da marylebone distriw de london. desin* bko sunshar ninian comper da perpendicu gotic ginkshe, kete ei* konstruin* beea 1901 aa 1903.
+```
+
+Because of the way the algorithm currently works, each execution can return different values. Use -v for verbose mode.
+
+### Language characteristics
+
+(May evolve a lot at this point)
+
+ * All characters use ascii.
+ * Plural form is represented with the suffix '$'
+ * Past tense is represented with the suffix '*'.
+ * Gerund is represented with the suffix '~'.
+ * Articles "A"/"the" do not exist. 
+ * Punctuation is basically the same than in english.
+ * There is no uppercase.

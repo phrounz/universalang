@@ -177,7 +177,11 @@ func (a *aggregator) finalize(debugVerbose bool) string {
 	if debugVerbose {
 		fmt.Printf("===> %d %d %s %s\n", firstBl, lastNotBl, strings.Join(outputBest, "."), strings.Join(outputNoBl, "."))
 	}
-	return strings.Join(outputBest[0:firstBl], "") + strings.Join(outputNoBl[firstBl:lastNotBl], "")
+	var finalWord = strings.Join(outputBest[0:firstBl], "") + strings.Join(outputNoBl[firstBl:lastNotBl], "")
+	if debugVerbose {
+		fmt.Printf("=======> %s\n", finalWord)
+	}
+	return finalWord
 }
 
 //------------------------------------------------------------------------------

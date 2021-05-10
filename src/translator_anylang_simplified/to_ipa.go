@@ -55,8 +55,9 @@ var mTranslateCharsByLanguage = map[string]map[string]string{
 	},
 	// https://en.wikipedia.org/wiki/Help:IPA/French
 	"fr": map[string]string{
-		"c": "k",
-		"ç": "s",
+		"c":  "k",
+		"ç":  "s",
+		"ch": "ʃ",
 		// TODO
 	},
 	// https://en.wikipedia.org/wiki/Help:IPA/Danish
@@ -94,6 +95,49 @@ var mTranslateCharsByLanguage = map[string]map[string]string{
 		"tj": "tɕ",
 		"v":  "v", //w
 		// TODO
+	},
+	// https://en.wikipedia.org/wiki/Help:IPA/Russian
+	"ru": map[string]string{
+		"б":   "b",  //bʲ,p
+		"д":   "d",  //dʲ,t
+		"ц":   "dz", //dʑ
+		"ф":   "f",  //fʲ
+		"г":   "g",  //ɡʲ,k,x
+		"Г":   "ɣ",  //
+		"к":   "k",
+		"ль":  "lʲ",
+		"мь":  "mʲ",
+		"л":   "l", //lʲ
+		"м":   "m", //mʲ
+		"н":   "n", //nʲ
+		"п":   "p",
+		"р":   "r",
+		"сь":  "sʲ",
+		"с":   "s", //sʲ,z
+		"з":   "s", //sʲ,z
+		"ш":   "sh",
+		"ж":   "sh", //ʐ
+		"ч":   "sh",
+		"т":   "t",
+		"тьс": "ts",
+		"в":   "v",
+		"х":   "х",
+		"а́":  "a",
+		"е":   "ɛ",
+		"ы":   "ɨ",
+		"и́":  "ɨ",
+		"й":   "ɨ", // TODO check
+		"и":   "ɨ",
+		"о́":  "o",
+		"ё":   "o",
+		"у́":  "u",
+		"а":   "ə", //ɐ
+		"о":   "o", //ɐ,ə
+		"e":   "ɛ",
+		"э":   "ɛ",
+		"у":   "ʊ",
+		"я":   "ə", //ya?
+		// TODO soft
 	},
 	// TODO other languages
 }

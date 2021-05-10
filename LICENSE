@@ -1,3 +1,15 @@
+= DICTIONARIES
+
+These dictionaries are taken from https://github.com/open-dsl-dict/wiktionary-dict
+
+They are published under the Creative Commons Attribution-ShareAlike 3.0 Unported License and the
+ GNU Free Documentation License (the same dual license under which the original files were made available).
+
+Please see the information files accompanying each of the dictionaries for further details and 
+attribution information.
+
+= SOURCE CODE
+
 MIT License
 
 Copyright (c) 2021 phrounz
